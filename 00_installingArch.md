@@ -172,8 +172,5 @@ El entorno gráfico se puede iniciar mediante un Gestor de inicio también conoc
     
     nano /home/"usuario"/.xinitrc
     exec gnome-session
-    
-    
-    
-    
 
+**Y ya estaría!!! Ya tenemos Arch listo.**
