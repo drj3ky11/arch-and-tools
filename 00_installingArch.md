@@ -111,7 +111,7 @@ Ahora crearemos la pass del root:
 
 Y un usuario del montón:
 
-    useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/-bash nombre_usuario
+    useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash nombre_usuario
     
     passwd nombre_usuario
 
