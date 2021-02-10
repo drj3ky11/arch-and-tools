@@ -174,3 +174,8 @@ El entorno gráfico se puede iniciar mediante un Gestor de inicio también conoc
     exec gnome-session
 
 **Y ya estaría!!! Ya tenemos Arch listo.**
+
+##Problema firmas
+
+    sudo pacman -S archlinux-keyring
+    sudo pacman -Syu
