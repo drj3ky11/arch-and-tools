@@ -76,6 +76,16 @@ Y montamos ambas particiones en los directorios creados
 
     mount /dev/sda4 /mnt/home
     
+    
+    
+## Wifi
+
+Usamos iwctl
+
+    dvice list
+    
+    
+    
 ## Sistema base
     
 Es el momento de comprobar la conexión a internet con un ping a google
@@ -84,6 +94,9 @@ Instalarmos el sistema base que lo componen *base* y *base-devel*. También *gru
 
     pacstrap /mnt base base-devel grub networkmanager gvfs gvfs-afc gvfs-mtp xdg-user-dirs linux linux-firmware nano dhcpcd
     
+Ojo UEFI
+
+    pacstrap /mnt base base-devel efibootmgr
     
 Para la wifi y el touchpad:
 
@@ -127,6 +140,15 @@ Instalamos Grub (sin UEFI) y creamos el archivo grub.cfg:
 
     grub-mkconfig -o /boot/grub/grub.cfg
     
+    
+Si usas el UEFI:
+
+    grub-install --efi-directory=/boot/efi --bootloader-id='Arch Linux' --target=x86_64-efi
+
+Actualizamos gub
+
+    grub-mkconfig -o /boot/grub/grub.cfg
+
 Ahora crearemos la pass del root:
 
     passwd
@@ -144,6 +166,19 @@ Y ya estaría! Salimos de chroot y desmontamos:
     umount /mnt
     reboot
     
+Con UEFI
+
+Desmontar particion /boot/efi
+
+    umount /mnt/boot/efi
+
+Desmontando la partición /home
+
+    umount /mnt/home
+
+Desmontar particion Raíz
+
+    umount /mnt
     
 Al reiniciar deberíamos editar el /etc/sudoers para dar permisos al usuario que hemos creado y:
 
