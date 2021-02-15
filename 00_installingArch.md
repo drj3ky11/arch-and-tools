@@ -29,6 +29,10 @@ Para ver las particiones:
 La /boot en ext2
 
     mkfs.ext2 /dev/sda1
+    
+Si la partición que creaste es para UEFI, la formatearás en Fat32.
+
+    mkfs.vfat -F32 /dev/sda1
 
 Raíz y home en ext4
 
