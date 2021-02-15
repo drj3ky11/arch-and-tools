@@ -58,6 +58,24 @@ Montamos las particiones en los directorios creados:
     mount /dev/sda1 /mnt/boot
     mount /dev/sda4 /mnt/home
     
+Con UEFI
+
+Primero montaremos la partición raíz
+
+    mount /dev/sda2 /mnt
+
+Ahora creamos los directorios dentro de /mnt para montar las particiones /boot/efi y /home
+
+    mkdir /mnt/home
+
+    mkdir -p /mnt/boot/efi
+
+Y montamos ambas particiones en los directorios creados
+
+    mount /dev/sda1 /mnt/boot/efi
+
+    mount /dev/sda4 /mnt/home
+    
 ## Sistema base
     
 Es el momento de comprobar la conexión a internet con un ping a google
